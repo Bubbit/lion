@@ -20,7 +20,7 @@ import { listboxData } from '@lion/listbox/docs/listboxData.js';
 import '@lion/listbox/lion-option.js';
 import './lion-combobox.js';
 import './docs/demo-selection-display.js';
-import './docs/demo-server-side.js';
+import './docs/ss-combobox/demo-server-side.js';
 
 import { lazyRender } from './docs/lazyRender.js';
 import levenshtein from './docs/levenshtein.js';

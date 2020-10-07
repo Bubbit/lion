@@ -1,12 +1,13 @@
 import { LitElement, html, repeat } from '@lion/core';
 
 import { listboxData } from '@lion/listbox/docs/listboxData.js';
+import './ss-option.js';
 
 function fetchMyData(val) {
   const results = listboxData.filter(item => item.toLowerCase().includes(val.toLowerCase()));
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(results);
+      resolve([results, results, results]);
     }, 1000);
   });
 }
@@ -45,7 +46,17 @@ class DemoServerSide extends LitElement {
           ${repeat(
             this.myData,
             entry => entry,
-            entry => html` <lion-option .choiceValue="${entry}">${entry}</lion-option> `,
+            entry => html` <div>Random text</div>
+              ${repeat(
+                entry,
+                result => result,
+                result =>
+                  html`
+                    <ss-option .choiceValue="${result}" .href="https://google.com"
+                      >${result}</ss-option
+                    >
+                  `,
+              )}`,
           )}
         </lion-options>
       </lion-combobox>
