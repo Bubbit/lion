@@ -52,9 +52,10 @@ class DemoServerSide extends LitElement {
                 result => result,
                 result =>
                   html`
-                    <ss-option .choiceValue="${result}" .href="https://google.com"
-                      >${result}</ss-option
-                    >
+                    <ss-option .choiceValue="${result}" href="https://google.com">
+                      <div>Some text</div>
+                      <span>${result}</span>
+                    </ss-option>
                   `,
               )}`,
           )}
